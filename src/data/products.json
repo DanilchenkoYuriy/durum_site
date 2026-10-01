@@ -1,0 +1,703 @@
+[
+ {
+  "wholesaleMinQuantity": 30,
+  "mainImage": {
+   "src": "/assets/products/pvc-rope-ddru-white.jpg",
+   "alt": "ПВХ скакалка DDRu — белая"
+  },
+  "gallery": [],
+  "availability": "on-request",
+  "series": "ddru",
+  "handleType": "ddru",
+  "id": "pvc-rope",
+  "seriesOptions": [
+   {
+    "id": "pvc-rope-loop",
+    "productId": "pvc-rope",
+    "category": "pvc",
+    "series": "loop",
+    "handleType": "loop",
+    "name": "ПВХ скакалка LOOP",
+    "description": "ПВХ скакалка с ручками LOOP. Синие или розовые ручки.",
+    "mainImage": {
+     "src": "/assets/products/loop/pvc-rope-loop-blue.jpg",
+     "alt": "ПВХ скакалка серии LOOP — синие ручки"
+    },
+    "gallery": [],
+    "variants": [
+     {
+      "id": "blue-handle",
+      "name": "Синие",
+      "colorName": "Синие",
+      "colorHex": "#5375b7",
+      "image": {
+       "src": "/assets/products/loop/pvc-rope-loop-blue.jpg",
+       "alt": "ПВХ скакалка серии LOOP — синие ручки"
+      },
+      "gallery": [],
+      "available": null,
+      "priceOverride": null
+     },
+     {
+      "id": "pink-handle",
+      "name": "Розовые",
+      "colorName": "Розовые",
+      "colorHex": "#dca7bd",
+      "image": {
+       "src": "/assets/products/loop/pvc-rope-loop-pink.jpg",
+       "alt": "ПВХ скакалка серии LOOP — розовые ручки"
+      },
+      "gallery": [],
+      "available": null,
+      "priceOverride": null
+     }
+    ],
+    "retailPriceOverride": null,
+    "wholesalePriceOverride": null,
+    "availability": "on-request"
+   }
+  ],
+  "slug": "pvc-rope",
+  "name": "ПВХ скакалка",
+  "shortName": "ПВХ",
+  "category": "pvc",
+  "shortDescription": "Литые ручки, а нейлоновый сердечник внутри шнура защищает скакалку от разрыва. Подходит для кардио, бокса, функционального тренинга, кроссфита, двойных прыжков и других задач, где важно сочетание высокой скорости вращения и хорошего контроля.",
+  "description": "ПВХ-шнур с внутренним нейлоновым сердечником. Подходит для динамичных тренировок, кардио, бокса, функционального тренинга, кроссфита, двойных прыжков и других задач, где важно сочетание высокой скорости вращения и хорошего контроля скакалки. Внутренний нейлоновый сердечник предотвращает разрыв шнура и повышает его устойчивость к нагрузкам.",
+  "descriptionLead": "ПВХ-шнур с внутренним нейлоновым сердечником.",
+  "descriptionParagraphs": [
+   {
+    "text": "Подходит для динамичных тренировок, кардио, бокса, функционального тренинга, кроссфита, двойных прыжков и других задач, где важно сочетание высокой скорости вращения и хорошего контроля скакалки."
+   },
+   {
+    "text": "Внутренний нейлоновый сердечник предотвращает разрыв шнура и повышает его устойчивость к нагрузкам."
+   }
+  ],
+  "retailPrice": 1190,
+  "wholesalePrice": 900,
+  "unitLabel": "шт.",
+  "variants": [
+   {
+    "id": "white",
+    "name": "Белый",
+    "colorName": "Белый",
+    "colorHex": "#f5f5f1",
+    "image": {
+     "src": "/assets/products/pvc-rope-ddru-white.jpg",
+     "alt": "ПВХ скакалка DDRu — белая"
+    },
+    "gallery": [],
+    "available": null
+   }
+  ],
+  "specifications": [
+   {
+    "label": "Шнур",
+    "value": "ПВХ, 300 см, Ø 5,0 мм*"
+   },
+   {
+    "label": "Внутри",
+    "value": "Нейлоновый сердечник"
+   },
+   {
+    "label": "Ручки",
+    "value": "Полипропилен, 200 × 25 мм"
+   }
+  ],
+  "specificationGroups": [
+   {
+    "title": "Шнур",
+    "items": [
+     {
+      "label": "Материал",
+      "value": "ПВХ"
+     },
+     {
+      "label": "Внутри",
+      "value": "Нейлоновый сердечник"
+     },
+     {
+      "label": "Длина",
+      "value": "300 см"
+     },
+     {
+      "label": "Диаметр",
+      "value": "5,0 мм*"
+     },
+     {
+      "label": "Количество",
+      "value": "1 шт."
+     }
+    ]
+   },
+   {
+    "title": "Ручки",
+    "items": [
+     {
+      "label": "Материал",
+      "value": "Полипропилен (PP)"
+     },
+     {
+      "label": "Длина",
+      "value": "200 мм"
+     },
+     {
+      "label": "Диаметр",
+      "value": "25 мм"
+     },
+     {
+      "label": "Диаметр внутреннего отверстия",
+      "value": "8,5 мм"
+     },
+     {
+      "label": "Вес одной ручки",
+      "value": "24 г"
+     },
+     {
+      "label": "Количество",
+      "value": "2 шт."
+     }
+    ]
+   },
+   {
+    "title": "Фиксаторы",
+    "items": [
+     {
+      "label": "Материал",
+      "value": "Пластик"
+     },
+     {
+      "label": "Количество",
+      "value": "2 шт."
+     }
+    ]
+   }
+  ],
+  "disciplines": [
+   "Общая подготовка",
+   "Вольные упражнения"
+  ],
+  "recommendedFor": [
+   "Регулярные тренировки",
+   "Вольные выступления"
+  ],
+  "features": [
+   "Регулируемая длина",
+   "Два варианта толщины кабеля"
+  ],
+  "coachRecommendation": "Обсудите с тренером выбор между кабелем 4 и 5 мм: он зависит от задачи и привычного ощущения скакалки.",
+  "contents": [
+   "Одна ПВХ скакалка"
+  ],
+  "sortOrder": 1
+ },
+ {
+  "wholesaleMinQuantity": 30,
+  "mainImage": {
+   "src": "/assets/products/beaded-rope-ddru-black.jpg",
+   "alt": "Бисерная скакалка DDRu — чёрный"
+  },
+  "gallery": [],
+  "availability": "on-request",
+  "series": "ddru",
+  "handleType": "ddru",
+  "id": "beaded-rope",
+  "seriesOptions": [
+   {
+    "id": "beaded-rope-loop",
+    "productId": "beaded-rope",
+    "category": "beaded",
+    "series": "loop",
+    "handleType": "loop",
+    "name": "Бисерная скакалка LOOP",
+    "description": "Бисерная скакалка с ручками LOOP. Синие или розовые ручки.",
+    "mainImage": {
+     "src": "/assets/products/loop/beaded-rope-loop-blue.jpg",
+     "alt": "Бисерная скакалка серии LOOP — синие ручки"
+    },
+    "gallery": [],
+    "variants": [
+     {
+      "id": "blue-handle",
+      "name": "Синие",
+      "colorName": "Синие",
+      "colorHex": "#5375b7",
+      "image": {
+       "src": "/assets/products/loop/beaded-rope-loop-blue.jpg",
+       "alt": "Бисерная скакалка серии LOOP — синие ручки"
+      },
+      "gallery": [],
+      "available": null,
+      "priceOverride": null
+     },
+     {
+      "id": "pink-handle",
+      "name": "Розовые",
+      "colorName": "Розовые",
+      "colorHex": "#dca7bd",
+      "image": {
+       "src": "/assets/products/loop/beaded-rope-loop-pink.jpg",
+       "alt": "Бисерная скакалка серии LOOP — розовые ручки"
+      },
+      "gallery": [],
+      "available": null,
+      "priceOverride": null
+     }
+    ],
+    "retailPriceOverride": null,
+    "wholesalePriceOverride": null,
+    "availability": "on-request"
+   }
+  ],
+  "slug": "beaded-rope",
+  "name": "Бисерная скакалка",
+  "shortName": "Бисерная",
+  "category": "beaded",
+  "shortDescription": "Для ритма, контроля и изучения новых трюков. Она тяжелее обычной и работает как тренировочный утяжелитель.",
+  "description": "Полиамидный шнур 3,0 мм с цветным бисером длиной 25 мм. Подходит как начинающим, так и профессионалам — для изучения новых элементов, совершенствования техники и отработки уже знакомых движений с дополнительным отягощением. Бисер работает как естественный утяжелитель: скакалка становится более ощутимой во время вращения, создаёт дополнительное сопротивление и помогает лучше чувствовать её положение, контролировать траекторию и точнее выполнять технически сложные элементы. Работа с отягощением развивает силу и контроль вращения. После бисерной скакалки переход на более лёгкую ПВХ- или скоростную модель позволяет крутить быстрее, легче и свободнее.",
+  "descriptionLead": "Полиамидный шнур 3,0 мм с цветным бисером длиной 25 мм.",
+  "descriptionParagraphs": [
+   {
+    "text": "Подходит как начинающим, так и профессионалам — для изучения новых элементов, совершенствования техники и отработки уже знакомых движений с дополнительным отягощением."
+   },
+   {
+    "text": "Бисер работает как естественный утяжелитель: скакалка становится более ощутимой во время вращения, создаёт дополнительное сопротивление и помогает лучше чувствовать её положение, контролировать траекторию и точнее выполнять технически сложные элементы.",
+    "emphasizedTerm": "утяжелитель"
+   },
+   {
+    "text": "Работа с отягощением развивает силу и контроль вращения. После бисерной скакалки переход на более лёгкую ПВХ- или скоростную модель позволяет крутить быстрее, легче и свободнее."
+   }
+  ],
+  "retailPrice": 1290,
+  "wholesalePrice": 1000,
+  "unitLabel": "шт.",
+  "variants": [
+   {
+    "id": "black",
+    "name": "Чёрный",
+    "colorName": "Чёрный",
+    "colorHex": "#151b1e",
+    "image": {
+     "src": "/assets/products/beaded-rope-ddru-black.jpg",
+     "alt": "Бисерная скакалка DDRu — чёрный"
+    },
+    "gallery": [],
+    "available": null
+   },
+   {
+    "id": "blue",
+    "name": "Синий",
+    "colorName": "Синий",
+    "colorHex": "#087bc7",
+    "image": {
+     "src": "/assets/products/beaded-rope-ddru-blue.jpg",
+     "alt": "Бисерная скакалка DDRu — синий"
+    },
+    "gallery": [],
+    "available": null
+   },
+   {
+    "id": "darkblue-blue-handle",
+    "name": "Тёмно-синий / синие ручки",
+    "colorName": "Тёмно-синий / синие ручки",
+    "colorHex": "#172c91",
+    "image": {
+     "src": "/assets/products/beaded-rope-ddru-darkblue-blue-handle.jpg",
+     "alt": "Бисерная скакалка DDRu — тёмно-синий / синие ручки"
+    },
+    "gallery": [],
+    "available": null
+   },
+   {
+    "id": "green",
+    "name": "Зелёный",
+    "colorName": "Зелёный",
+    "colorHex": "#078b39",
+    "image": {
+     "src": "/assets/products/beaded-rope-ddru-green.jpg",
+     "alt": "Бисерная скакалка DDRu — зелёный"
+    },
+    "gallery": [],
+    "available": null
+   },
+   {
+    "id": "lightgreen-blackhandle",
+    "name": "Светло-зелёный / чёрные ручки",
+    "colorName": "Светло-зелёный / чёрные ручки",
+    "colorHex": "#42d828",
+    "image": {
+     "src": "/assets/products/beaded-rope-ddru-lightgreen-blackhandle.jpg",
+     "alt": "Бисерная скакалка DDRu — светло-зелёный / чёрные ручки"
+    },
+    "gallery": [],
+    "available": null
+   },
+   {
+    "id": "neongreen-whitehandle",
+    "name": "Неоновый жёлто-зелёный / белые ручки",
+    "colorName": "Неоновый жёлто-зелёный / белые ручки",
+    "colorHex": "#e2ef3b",
+    "image": {
+     "src": "/assets/products/beaded-rope-ddru-neongreen-whitehandle.jpg",
+     "alt": "Бисерная скакалка DDRu — неоновый жёлто-зелёный / белые ручки"
+    },
+    "gallery": [],
+    "available": null
+   },
+   {
+    "id": "neonpink",
+    "name": "Неоновый розовый",
+    "colorName": "Неоновый розовый",
+    "colorHex": "#f5007e",
+    "image": {
+     "src": "/assets/products/beaded-rope-ddru-neonpink.jpg",
+     "alt": "Бисерная скакалка DDRu — неоновый розовый"
+    },
+    "gallery": [],
+    "available": null
+   },
+   {
+    "id": "orange-blackhandle",
+    "name": "Оранжевый / чёрные ручки",
+    "colorName": "Оранжевый / чёрные ручки",
+    "colorHex": "#f04b0c",
+    "image": {
+     "src": "/assets/products/beaded-rope-ddru-orange-blackhandle.jpg",
+     "alt": "Бисерная скакалка DDRu — оранжевый / чёрные ручки"
+    },
+    "gallery": [],
+    "available": null
+   },
+   {
+    "id": "orange",
+    "name": "Оранжевый",
+    "colorName": "Оранжевый",
+    "colorHex": "#f26416",
+    "image": {
+     "src": "/assets/products/beaded-rope-ddru-orange.jpg",
+     "alt": "Бисерная скакалка DDRu — оранжевый"
+    },
+    "gallery": [],
+    "available": null
+   },
+   {
+    "id": "pastelpink-whitehandle",
+    "name": "Пастельный розовый / белые ручки",
+    "colorName": "Пастельный розовый / белые ручки",
+    "colorHex": "#d986a0",
+    "image": {
+     "src": "/assets/products/beaded-rope-ddru-pastelpink-whitehandle.jpg",
+     "alt": "Бисерная скакалка DDRu — пастельный розовый / белые ручки"
+    },
+    "gallery": [],
+    "available": null
+   },
+   {
+    "id": "purple",
+    "name": "Фиолетовый",
+    "colorName": "Фиолетовый",
+    "colorHex": "#8124b4",
+    "image": {
+     "src": "/assets/products/beaded-rope-ddru-purple.jpg",
+     "alt": "Бисерная скакалка DDRu — фиолетовый"
+    },
+    "gallery": [],
+    "available": null
+   },
+   {
+    "id": "red",
+    "name": "Красный",
+    "colorName": "Красный",
+    "colorHex": "#ce102a",
+    "image": {
+     "src": "/assets/products/beaded-rope-ddru-rad.jpg",
+     "alt": "Бисерная скакалка DDRu — красный"
+    },
+    "gallery": [],
+    "available": null
+   },
+   {
+    "id": "turquoise",
+    "name": "Бирюзовый",
+    "colorName": "Бирюзовый",
+    "colorHex": "#14b6c1",
+    "image": {
+     "src": "/assets/products/beaded-rope-ddru-terakot.jpg",
+     "alt": "Бисерная скакалка DDRu — бирюзовый"
+    },
+    "gallery": [],
+    "available": null
+   },
+   {
+    "id": "white",
+    "name": "Белый",
+    "colorName": "Белый",
+    "colorHex": "#f5f5f1",
+    "image": {
+     "src": "/assets/products/beaded-rope-ddru-white.jpg",
+     "alt": "Бисерная скакалка DDRu — белый"
+    },
+    "gallery": [],
+    "available": null
+   },
+   {
+    "id": "yellow",
+    "name": "Жёлтый",
+    "colorName": "Жёлтый",
+    "colorHex": "#f4d310",
+    "image": {
+     "src": "/assets/products/beaded-rope-ddru-yellow.jpg",
+     "alt": "Бисерная скакалка DDRu — жёлтый"
+    },
+    "gallery": [],
+    "available": null
+   }
+  ],
+  "specifications": [
+   {
+    "label": "Шнур",
+    "value": "Полипропилен (PP), 300 см"
+   },
+   {
+    "label": "Ручки",
+    "value": "Полипропилен, 200 × 25 мм"
+   },
+   {
+    "label": "Бисер",
+    "value": "Полиэтилен, 102 ± 2 шт."
+   }
+  ],
+  "specificationGroups": [
+   {
+    "title": "Шнур",
+    "items": [
+     {
+      "label": "Материал",
+      "value": "Полипропилен (PP)"
+     },
+     {
+      "label": "Длина",
+      "value": "300 см"
+     },
+     {
+      "label": "Количество",
+      "value": "1 шт."
+     }
+    ]
+   },
+   {
+    "title": "Ручки",
+    "items": [
+     {
+      "label": "Материал",
+      "value": "Полипропилен (PP)"
+     },
+     {
+      "label": "Длина",
+      "value": "200 мм"
+     },
+     {
+      "label": "Диаметр",
+      "value": "25 мм"
+     },
+     {
+      "label": "Диаметр внутреннего отверстия",
+      "value": "8,5 мм"
+     },
+     {
+      "label": "Вес одной ручки",
+      "value": "24 г"
+     },
+     {
+      "label": "Количество",
+      "value": "2 шт."
+     }
+    ]
+   },
+   {
+    "title": "Бисер",
+    "items": [
+     {
+      "label": "Материал",
+      "value": "Полиэтилен (PE)"
+     },
+     {
+      "label": "Длина одной бисерины",
+      "value": "25 мм"
+     },
+     {
+      "label": "Внешний диаметр",
+      "value": "8,6 мм"
+     },
+     {
+      "label": "Внутренний диаметр",
+      "value": "6 мм"
+     },
+     {
+      "label": "Вес одной бисерины",
+      "value": "0,73 г"
+     },
+     {
+      "label": "Количество",
+      "value": "102 ± 2 шт."
+     }
+    ]
+   },
+   {
+    "title": "Фиксаторы",
+    "items": [
+     {
+      "label": "Материал",
+      "value": "Пластик"
+     },
+     {
+      "label": "Количество",
+      "value": "2 шт."
+     }
+    ]
+   }
+  ],
+  "disciplines": [
+   "Вольные упражнения",
+   "Скоростные тренировки"
+  ],
+  "recommendedFor": [
+   "Изучение элементов",
+   "Первые тренировки",
+   "Работа над ощущением скакалки"
+  ],
+  "features": [
+   "Хорошо ощущается спортсменом",
+   "Регулируемая длина"
+  ],
+  "coachRecommendation": "Для знакомства с элементами начните с бисерной модели: она помогает чувствовать положение скакалки и ритм вращения.",
+  "contents": [
+   "Одна бисерная скакалка"
+  ],
+  "sortOrder": 2
+ },
+ {
+  "wholesaleMinQuantity": 30,
+  "mainImage": {
+   "src": "/assets/products/speed-rope-loop-cable2.5mm.jpg",
+   "alt": "Скоростная скакалка с тросом 2,5 мм"
+  },
+  "gallery": [],
+  "availability": "on-request",
+  "series": "ddru",
+  "handleType": "ddru",
+  "id": "speed-rope",
+  "slug": "speed-rope",
+  "name": "Скоростная скакалка",
+  "shortName": "Скоростная",
+  "category": "speed",
+  "shortDescription": "Когда важна только скорость, двойные, тройные — трос, подшипник и лёгкость в каждом движении.",
+  "description": "Металлический трос с подшипником для скоростно-силовой работы. Основной вариант — трос 2,5 мм в оплётке. Регулируемая длина и чехол в комплекте.",
+  "retailPrice": 1590,
+  "wholesalePrice": 1200,
+  "unitLabel": "шт.",
+  "variants": [],
+  "specifications": [
+   {
+    "label": "Длина",
+    "value": "3 м, регулируется"
+   },
+   {
+    "label": "Трос",
+    "value": "Металлический, 2,5 мм в оплётке"
+   },
+   {
+    "label": "Механизм",
+    "value": "Подшипник"
+   }
+  ],
+  "disciplines": [
+   "Скоростно-силовые дисциплины"
+  ],
+  "recommendedFor": [
+   "Скоростные тренировки",
+   "Спортсмены с задачей развития скорости"
+  ],
+  "features": [
+   "Подшипник",
+   "Чехол в комплекте"
+  ],
+  "coachRecommendation": "Выбирайте под конкретную скоростную задачу. Если спортсмен только осваивает базовые движения, сначала обсудим подготовку и подходящий инвентарь.",
+  "contents": [
+   "Одна скоростная скакалка",
+   "Чехол"
+  ],
+  "sortOrder": 3
+ },
+ {
+  "wholesaleMinQuantity": 30,
+  "mainImage": {
+   "src": "/assets/products/dd-beaded-rope-ddru-white.jpg",
+   "alt": "Белый комплект из двух скакалок Double Dutch DDRu"
+  },
+  "gallery": [],
+  "availability": "on-request",
+  "series": "ddru",
+  "handleType": "ddru",
+  "id": "double-dutch-rope",
+  "slug": "double-dutch-rope",
+  "name": "Дабл Датч скакалки",
+  "shortName": "Double Dutch",
+  "category": "double-dutch",
+  "shortDescription": "Дабл Датч объединяет скорость, трюки и командную работу.",
+  "description": "Комплект из двух бисерных скакалок длиной 4,2 м с длинными ручками. Для командных тренировок, вольных и скоростных дисциплин Double Dutch.",
+  "retailPrice": 2990,
+  "wholesalePrice": 2500,
+  "unitLabel": "комплект",
+  "variants": [
+   {
+    "id": "white",
+    "name": "Белый",
+    "colorName": "Белый",
+    "colorHex": "#f5f5f1",
+    "image": {
+     "src": "/assets/products/dd-beaded-rope-ddru-white.jpg",
+     "alt": "Белый комплект из двух скакалок Double Dutch DDRu"
+    },
+    "gallery": [],
+    "available": null
+   }
+  ],
+  "specifications": [
+   {
+    "label": "Длина",
+    "value": "4,2 м"
+   },
+   {
+    "label": "Конструкция",
+    "value": "Бисерная"
+   },
+   {
+    "label": "Ручки",
+    "value": "Длинные"
+   },
+   {
+    "label": "Количество",
+    "value": "2 скакалки в комплекте"
+   }
+  ],
+  "disciplines": [
+   "Double Dutch",
+   "Вольные дисциплины",
+   "Скоростные дисциплины"
+  ],
+  "recommendedFor": [
+   "Командные тренировки",
+   "Секции и клубы",
+   "Запуск Double Dutch"
+  ],
+  "features": [
+   "Парный комплект",
+   "Для тренировок и выступлений"
+  ],
+  "coachRecommendation": "Планируйте комплекты по числу одновременно работающих групп. Для одного места вращения нужен один комплект из двух скакалок; состав и ротацию участников обсудим при подборе.",
+  "contents": [
+   "Две бисерные скакалки по 4,2 м"
+  ],
+  "sortOrder": 4
+ }
+]

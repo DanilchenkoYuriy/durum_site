@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /cart/
+
+Sitemap: https://www.double-dutch.ru/sitemap.xml
