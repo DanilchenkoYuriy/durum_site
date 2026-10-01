@@ -521,6 +521,90 @@ const extraCss = `
 /* v2: дополнения */
 [hidden] { display: none !important; }
 .product-image { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* Телефон и планшет, страница товара: сразу под фото — серия и цвета,
+   и только потом название, описание, цена и кнопки. */
+@media (max-width: 960px) {
+  .product-page .product-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .product-page .product-gallery,
+  .product-page .product-info {
+    display: contents;
+  }
+  .product-page .product-gallery > .product-media {
+    order: 1;
+    width: 100%;
+    max-width: 680px;
+  }
+  .product-page .gallery-thumbs {
+    order: 2;
+    max-width: 680px;
+    overflow-x: auto;
+  }
+  .product-page .series-selector {
+    order: 3;
+    margin-top: 18px;
+  }
+  .product-page .variant-fieldset {
+    order: 4;
+    margin-top: 18px;
+  }
+  .product-page .gallery-note {
+    order: 5;
+  }
+  .product-page .product-info > :not(.series-selector):not(.variant-fieldset):not(.gallery-note) {
+    order: 10;
+  }
+  .product-page .product-info > .eyebrow {
+    margin-top: 28px;
+  }
+}
+/* Телефон: фото, серия и все цвета помещаются на одном экране,
+   чтобы после выбора цвета новое фото было видно сразу, без прокрутки. */
+@media (max-width: 640px) {
+  .product-page .product-gallery > .product-media {
+    aspect-ratio: 1.15;
+  }
+  .product-page .product-gallery .product-image {
+    padding: 6px;
+  }
+  .product-page .gallery-thumbs {
+    margin-top: 8px;
+  }
+  .product-page .series-selector {
+    margin-top: 12px;
+  }
+  .product-page .series-selector legend,
+  .product-page .variant-fieldset legend {
+    margin-bottom: 6px;
+  }
+  .product-page .series-selector > div {
+    margin-top: 0;
+  }
+  .product-page .variant-fieldset {
+    margin-top: 12px;
+  }
+  .product-page .variant-fieldset strong {
+    display: inline;
+    margin: 0 0 0 6px;
+  }
+  .product-page .swatches {
+    gap: 3px;
+    margin-top: 4px;
+    max-width: none;
+  }
+  .product-page .swatch {
+    width: 40px;
+    height: 40px;
+  }
+  .product-page .swatch::after {
+    inset: 6px;
+  }
+}
 `;
 const css = fs
   .readdirSync(path.join(root, "src/styles"))
