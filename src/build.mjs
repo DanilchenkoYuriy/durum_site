@@ -1,6 +1,7 @@
 // Сборка сайта: node src/build.mjs
 // Результат — готовые HTML/CSS/JS-файлы в корне проекта (их и загружают на хостинг).
 import fs from "node:fs";
+import crypto from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -40,6 +41,9 @@ const metrikaNoscript = METRIKA_ID
   : "";
 const SITE_DESCRIPTION =
   "Профессиональные скакалки DDRu. Экспертный подбор инвентаря для спортсменов, тренеров, секций и федераций.";
+
+// Метка версии CSS и JS: меняется при каждой правке, чтобы браузеры не держали старые файлы в кэше.
+let ASSET_V = "";
 
 const products = JSON.parse(read("src/data/products.json")).sort(
   (a, b) => a.sortOrder - b.sortOrder,
@@ -117,7 +121,7 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : `<link rel="canonical" 
 <meta property="og:site_name" content="Double Dutch Russia">
 <meta property="og:url" content="${url}">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style.css?v=${ASSET_V}">
 ${metrikaHead}</head>
 <body class="${bodyClass}">
 <a class="skip-link" href="#main">Перейти к содержимому</a>
@@ -127,7 +131,7 @@ ${body}
 </main>
 ${footer()}
 ${dialog}
-${metrikaNoscript}<script src="/js/app.js" defer></script>
+${metrikaNoscript}<script src="/js/app.js?v=${ASSET_V}" defer></script>
 </body>
 </html>
 `;
@@ -502,20 +506,6 @@ const write = (rel, data) => {
   fs.writeFileSync(file, data);
 };
 
-for (const p of pages) {
-  write(p.path === "/" ? "index.html" : `${p.path.slice(1)}index.html`, page(p));
-}
-write(
-  "404.html",
-  page({
-    path: "/404/",
-    title: "Страница не найдена",
-    description: "Такой страницы нет. Вернитесь в каталог DDRu.",
-    noindex: true,
-    body: `<div class="container not-found"><p class="eyebrow">404 / Вне маршрута</p><h1>Здесь пока пусто.</h1><p>Вернёмся туда, где есть подходящий инвентарь.</p><a class="button" href="/catalog/">Открыть каталог ↗</a></div>`,
-  }),
-);
-
 // CSS: те же стили, что и на прежнем сайте, плюс небольшие дополнения для обычных <img>
 const extraCss = `
 /* v2: дополнения */
@@ -611,12 +601,31 @@ const css = fs
   .sort()
   .map((f) => read(`src/styles/${f}`))
   .join("\n");
-write("css/style.css", css + extraCss);
+const cssText = css + extraCss;
 
 // JS: lib.mjs (без export) + client.js + данные
 const lib = read("src/lib.mjs").replace(/^export /gm, "");
 const data = `const METRIKA_ID = ${JSON.stringify(METRIKA_ID)};\nconst PRODUCTS = ${JSON.stringify(products)};\nconst EDUCATION = ${JSON.stringify(education)};\n`;
-write("js/app.js", `(() => {\n"use strict";\n${data}\n${lib}\n${read("src/client.js")}\n})();\n`);
+const jsText = `(() => {\n"use strict";\n${data}\n${lib}\n${read("src/client.js")}\n})();\n`;
+ASSET_V = crypto.createHash("md5").update(cssText + jsText).digest("hex").slice(0, 8);
+
+
+write("css/style.css", cssText);
+write("js/app.js", jsText);
+
+for (const p of pages) {
+  write(p.path === "/" ? "index.html" : `${p.path.slice(1)}index.html`, page(p));
+}
+write(
+  "404.html",
+  page({
+    path: "/404/",
+    title: "Страница не найдена",
+    description: "Такой страницы нет. Вернитесь в каталог DDRu.",
+    noindex: true,
+    body: `<div class="container not-found"><p class="eyebrow">404 / Вне маршрута</p><h1>Здесь пока пусто.</h1><p>Вернёмся туда, где есть подходящий инвентарь.</p><a class="button" href="/catalog/">Открыть каталог ↗</a></div>`,
+  }),
+);
 
 // Картинки
 fs.cpSync(path.join(root, "src/assets"), path.join(out, "assets"), { recursive: true });
