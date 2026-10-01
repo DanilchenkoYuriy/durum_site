@@ -4,15 +4,19 @@
 что у прежнего сайта (подбор, корзина, форма заявки, выбор цвета и серии LOOP).
 
 ## Что загружать на хостинг
-Содержимое папки **`site/`** (или готовый архив `ddru-v2-site.zip`) целиком
-в корень сайта (`public_html`). `index.html` должен лежать прямо в `public_html`.
+Сайт лежит прямо в корне папки: `index.html`, `catalog/`, `css/`, `js/`, `assets/` и другие.
+Папки `src/` и файл `README.md` на хостинг загружать не нужно.
+Готовый архив только с сайтом: `ddru-v2-site.zip` — распаковать в `public_html`.
+`index.html` должен лежать прямо в `public_html`.
+
+Vercel: Framework Preset — Other, Build Command и Output Directory оставить пустыми.
 
 ## Как внести правки
 Нужен Node.js 22+. Правки делаются в `src/`, потом сборка:
 
 ```sh
 cd ddru_v2
-node src/build.mjs          # пересобирает папку site/
+node src/build.mjs          # пересобирает сайт в корне папки
 ```
 
 - `src/data/products.json` — товары, цены, характеристики, цвета, серии LOOP

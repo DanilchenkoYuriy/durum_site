@@ -1,5 +1,5 @@
 // Сборка сайта: node src/build.mjs
-// Результат — готовые HTML/CSS/JS-файлы в папке site/ (её и загружают на хостинг).
+// Результат — готовые HTML/CSS/JS-файлы в корне проекта (их и загружают на хостинг).
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -16,7 +16,8 @@ import {
 } from "./lib.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const out = path.join(root, "site");
+// Сайт собирается прямо в корень проекта (index.html лежит рядом с папкой src).
+const out = root;
 const read = (p) => fs.readFileSync(path.join(root, p), "utf8");
 const SITE_URL = (process.env.SITE_URL || "https://www.double-dutch.ru").replace(/\/$/, "");
 const SITE_DESCRIPTION =
@@ -470,8 +471,13 @@ ${pageIntro("DDRu / персональный подбор", "Начнём с в�
 });
 
 /* ---------- запись файлов ---------- */
-fs.rmSync(out, { recursive: true, force: true });
-fs.mkdirSync(out, { recursive: true });
+// Удаляем только то, что создаёт сам сборщик (src/, README и .git не трогаем).
+for (const name of [
+  "index.html", "404.html", "robots.txt", "sitemap.xml",
+  "about", "cart", "catalog", "contacts", "double-dutch", "education",
+  "for-sections", "selection", "css", "js", "assets",
+]) fs.rmSync(path.join(out, name), { recursive: true, force: true });
+for (const f of fs.readdirSync(out)) if (/^yandex_.*\.html$/.test(f)) fs.rmSync(path.join(out, f));
 const write = (rel, data) => {
   const file = path.join(out, rel);
   fs.mkdirSync(path.dirname(file), { recursive: true });
