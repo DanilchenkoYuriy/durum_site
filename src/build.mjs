@@ -20,6 +20,24 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = root;
 const read = (p) => fs.readFileSync(path.join(root, p), "utf8");
 const SITE_URL = (process.env.SITE_URL || "https://www.double-dutch.ru").replace(/\/$/, "");
+const config = JSON.parse(read("src/config.json"));
+// Номер счётчика Яндекс Метрики: src/config.json → "metrikaId" (или переменная METRIKA_ID).
+const METRIKA_ID = String(process.env.METRIKA_ID || config.metrikaId || "").replace(/\D/g, "");
+const metrikaHead = METRIKA_ID
+  ? `<script>
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ym(${METRIKA_ID}, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true});
+</script>
+`
+  : "";
+const metrikaNoscript = METRIKA_ID
+  ? `<noscript><div><img src="https://mc.yandex.ru/watch/${METRIKA_ID}" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+`
+  : "";
 const SITE_DESCRIPTION =
   "Профессиональные скакалки DDRu. Экспертный подбор инвентаря для спортсменов, тренеров, секций и федераций.";
 
@@ -100,7 +118,7 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : `<link rel="canonical" 
 <meta property="og:url" content="${url}">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="/css/style.css">
-</head>
+${metrikaHead}</head>
 <body class="${bodyClass}">
 <a class="skip-link" href="#main">Перейти к содержимому</a>
 ${header(pth)}
@@ -109,7 +127,7 @@ ${body}
 </main>
 ${footer()}
 ${dialog}
-<script src="/js/app.js" defer></script>
+${metrikaNoscript}<script src="/js/app.js" defer></script>
 </body>
 </html>
 `;
@@ -513,7 +531,7 @@ write("css/style.css", css + extraCss);
 
 // JS: lib.mjs (без export) + client.js + данные
 const lib = read("src/lib.mjs").replace(/^export /gm, "");
-const data = `const PRODUCTS = ${JSON.stringify(products)};\nconst EDUCATION = ${JSON.stringify(education)};\n`;
+const data = `const METRIKA_ID = ${JSON.stringify(METRIKA_ID)};\nconst PRODUCTS = ${JSON.stringify(products)};\nconst EDUCATION = ${JSON.stringify(education)};\n`;
 write("js/app.js", `(() => {\n"use strict";\n${data}\n${lib}\n${read("src/client.js")}\n})();\n`);
 
 // Картинки

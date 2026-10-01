@@ -1,5 +1,45 @@
 /* ---------- Поведение страниц (чистый JavaScript) ---------- */
 const products = PRODUCTS;
+
+/* ---------- статистика (Яндекс Метрика, цели) ---------- */
+function track(goal, params) {
+  try {
+    if (METRIKA_ID && typeof ym === "function")
+      ym(Number(METRIKA_ID), "reachGoal", goal, params);
+  } catch {
+    /* статистика не должна ломать сайт */
+  }
+}
+const productName = (id) => products.find((p) => p.id === id)?.shortName ?? "";
+document.addEventListener("click", (e) => {
+  const a = e.target.closest("a[href]");
+  if (!a) return;
+  const place = a.closest(".prepared-inquiry")
+    ? "заявка"
+    : a.closest(".selection-handoff")
+      ? "подбор"
+      : a.closest("footer")
+        ? "подвал"
+        : "страница";
+  if (a.href.startsWith("tel:"))
+    track("click_phone", { страница: location.pathname });
+  else if (a.closest(".messenger-links") || a.hasAttribute("data-open-chat"))
+    track("click_messenger", {
+      мессенджер: a.textContent.replace("↗", "").trim(),
+      место: place,
+      страница: location.pathname,
+    });
+});
+document.addEventListener(
+  "toggle",
+  (e) => {
+    if (e.target.matches?.("details") && e.target.open)
+      track("faq_open", {
+        вопрос: e.target.querySelector("summary")?.textContent.replace("+", "").trim(),
+      });
+  },
+  true,
+);
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
@@ -100,6 +140,11 @@ let dialogTrigger = null;
 function openInquiry(context, { title, trigger } = {}) {
   if (!dialog) return;
   dialogTrigger = trigger ?? document.activeElement;
+  track("open_inquiry", {
+    тип: context.inquiryType || "general",
+    товар: productName(context.product),
+    страница: location.pathname,
+  });
   $("#inquiry-title").textContent = title || "Подберём инвентарь вместе";
   mountLeadForm($("#inquiry-body"), context);
   dialog.showModal();
@@ -213,6 +258,7 @@ function mountLeadForm(container, context) {
       return;
     }
     if (e.target.closest("[data-lf-copy]")) {
+      track("inquiry_copy", { страница: location.pathname });
       copyText(
         summary,
         $("[data-lf-status]", container),
@@ -231,6 +277,12 @@ function mountLeadForm(container, context) {
     e.preventDefault();
     if (!inquiryValid(draft)) return;
     prepared = buildInquiryData(draft, context, products, window.location.href);
+    track("inquiry_prepared", {
+      тип: prepared.inquiryType,
+      товар: productName(prepared.productId),
+      количество: prepared.quantity ?? "",
+      связь: prepared.preferredMessenger,
+    });
     render();
   };
   render();
@@ -288,10 +340,18 @@ function mountProduct() {
       render(`[data-action=thumb][data-index="${st.imageIndex}"]`);
     } else if (action === "series") {
       st.seriesId = btn.dataset.series;
+      track("choose_series", {
+        товар: product.shortName,
+        серия: seriesLabel(st.seriesId),
+      });
       st.imageIndex = 0;
       render(`[data-action=series][data-series="${st.seriesId}"]`);
     } else if (action === "color") {
       st.selectedColors[st.seriesId] = btn.dataset.variant;
+      track("choose_color", {
+        товар: product.shortName,
+        цвет: btn.getAttribute("aria-label"),
+      });
       st.imageIndex = 0;
       render(`[data-action=color][data-variant="${btn.dataset.variant}"]`);
     } else if (action === "add-to-cart") {
@@ -304,6 +364,11 @@ function mountProduct() {
         quantity: st.quantity,
       });
       $("#detail-added").hidden = false;
+      track("add_to_cart", {
+        товар: product.shortName,
+        серия: seriesLabel(st.seriesId),
+        количество: st.quantity,
+      });
     } else if (action === "inquire-product") {
       openInquiry(
         {
@@ -599,6 +664,12 @@ ${
       inquiryText = buildInquirySummary(prepared, products);
     }
     step += 1;
+    track("wizard_step", { шаг: step });
+    if (step === 6)
+      track("wizard_result", {
+        задачи: state.disciplines.join(", "),
+        рекомендации: recommendProducts(state).join(", "),
+      });
     render();
   };
   root.onclick = (e) => {

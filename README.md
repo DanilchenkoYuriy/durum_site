@@ -34,3 +34,14 @@ node src/build.mjs          # пересобирает сайт в корне п
 ```sh
 SITE_URL=https://double-dutch.ru node src/build.mjs
 ```
+
+## Статистика (Яндекс Метрика)
+1. Создайте счётчик на metrika.yandex.ru, включите «Вебвизор, карту скроллинга, аналитику форм».
+2. Впишите номер счётчика в `src/config.json`: `{ "metrikaId": "12345678" }`
+3. Пересоберите сайт (`node src/build.mjs`) и загрузите на хостинг.
+
+Автоматически собираются: просмотры страниц (в том числе какие скакалки смотрят), карта кликов,
+клики по внешним ссылкам, источники трафика, запись действий посетителей.
+Дополнительные события (цели) в Метрике: `open_inquiry`, `inquiry_prepared`, `inquiry_copy`,
+`click_messenger`, `click_phone`, `add_to_cart`, `choose_color`, `choose_series`,
+`wizard_step`, `wizard_result`, `faq_open` — у каждой есть параметры (товар, цвет, мессенджер и т. д.).
